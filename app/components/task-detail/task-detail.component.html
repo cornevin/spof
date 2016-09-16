@@ -1,1 +1,8 @@
 <h2>TODO Details of the task</h2>
+<!--<div>test : {{task.description}}</div> -->
+
+
+<div contenteditable="true"
+     [textContent]="todoTask.description" (input)="todoTask.description=$event.target.textContent"></div>
+<p>{{todoTask.description}}
+

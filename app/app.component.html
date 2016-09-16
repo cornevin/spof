@@ -6,7 +6,7 @@
     <li *ngFor="let todoTask of tasks" (click)="onSelect(todoTask)">
         <span class="badge">{{todoTask.name}}</span>
         <div *ngIf="todoTask === selectedTask">
-            <task-detail></task-detail>
+            <task-detail [todoTask]="selectedTask"></task-detail>
         </div>
     </li>
 </ul>

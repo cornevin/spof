@@ -4,6 +4,8 @@
 
 
 import { Component, Input } from '@angular/core';
+import { Task } from '../../models/task';
+
 
 @Component({
     selector: 'task-detail',
@@ -12,4 +14,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TaskDetailComponent {
+    @Input()
+    todoTask: Task;
+
+
 }

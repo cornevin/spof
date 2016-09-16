@@ -20,9 +20,9 @@ var AppComponent = (function () {
 
     */
     AppComponent.prototype.addTask = function (TaskName) {
-        console.log(TaskName);
         var task = {
-            name: TaskName
+            name: TaskName,
+            description: "Write your description here"
         };
         TASKS.push(task);
     };

@@ -23,9 +23,9 @@ export class AppComponent {
 
     */
     addTask(TaskName: string): void {
-        console.log(TaskName);
         var task: Task = {
-            name: TaskName
+            name: TaskName,
+            description: "Write your description here"
         };
         TASKS.push(task);
     };
