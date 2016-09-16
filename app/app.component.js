@@ -9,13 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var TASKS = [];
 var AppComponent = (function () {
     function AppComponent() {
+        this.tasks = TASKS;
     }
+    /*    task: Task = {
+            name: "Work chineese ! "
+        };
+
+    */
+    AppComponent.prototype.addTask = function (TaskName) {
+        console.log(TaskName);
+        var task = {
+            name: TaskName
+        };
+        TASKS.push(task);
+    };
+    ;
+    AppComponent.prototype.onSelect = function (task) {
+        this.selectedTask = task;
+    };
+    ;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 RC6 App with Electron</h1>'
+            templateUrl: './app/app.component.html',
+            styleUrls: ['./app/app.component.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
