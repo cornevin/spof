@@ -1,14 +1,5 @@
-<h1>TODO</h1>
+<h1 class="head-font">Spof - Todo</h1>
 
-<input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="task" (keyup.enter)="addTask(task)">
-
-<ul class="tasks">
-    <li *ngFor="let todoTask of tasks" (click)="onSelect(todoTask)">
-        <span class="badge">{{todoTask.name}}</span>
-        <div *ngIf="todoTask === selectedTask">
-            <task-detail [todoTask]="selectedTask"></task-detail>
-        </div>
-    </li>
-</ul>
+<router-outlet></router-outlet>
 
 

@@ -9,28 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var TASKS = [];
 var AppComponent = (function () {
     function AppComponent() {
-        this.tasks = TASKS;
     }
-    /*    task: Task = {
-            name: "Work chineese ! "
-        };
-
-    */
-    AppComponent.prototype.addTask = function (TaskName) {
-        var task = {
-            name: TaskName,
-            description: "Write your description here"
-        };
-        TASKS.push(task);
-    };
-    ;
-    AppComponent.prototype.onSelect = function (task) {
-        this.selectedTask = task;
-    };
-    ;
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',

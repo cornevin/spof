@@ -11,9 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var app_routing_1 = require('./app.routing');
 //import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 var app_component_1 = require('./app.component');
-var task_detail_component_1 = require('./components/task-detail/task-detail.component');
+var login_component_1 = require('./components/login/login.component');
+var todo_list_component_1 = require('./components/todo-list/todo-list.component');
+var task_detail_component_1 = require('./components/todo-list/task-detail/task-detail.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,9 +25,12 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                app_routing_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
+                login_component_1.LoginComponent,
+                todo_list_component_1.TodoListComponent,
                 task_detail_component_1.TaskDetailComponent
             ],
             bootstrap: [app_component_1.AppComponent]
