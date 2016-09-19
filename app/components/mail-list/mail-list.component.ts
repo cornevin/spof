@@ -3,6 +3,8 @@
  */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
+
 
 import { Mail } from '../../models/mail';
 import { MailService } from './mail.service';
@@ -15,8 +17,12 @@ let toggledMenu: boolean = false;
     styleUrls: ['./app/components/mail-list/mail-list.component.css'],
 })
 
-export class MailListComponent {
+export class MailListComponent implements OnInit {
     mails: Mail[];
+
+    ngOnInit(): void {
+        this.getMails();
+    }
 
     constructor(
         private router: Router,
