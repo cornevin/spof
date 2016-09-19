@@ -1,10 +1,31 @@
 <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="task" (keyup.enter)="addTask(task)">
 
-<ul class="tasks">
-    <li *ngFor="let todoTask of tasks" (click)="onSelect(todoTask)">
-        <span class="badge">{{todoTask.name}}</span>
-        <div *ngIf="todoTask === selectedTask">
-            <task-detail [todoTask]="selectedTask"></task-detail>
+<div id="wrapper">
+
+    <mail-list></mail-list>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a (click)="toggled()" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+                </div>
+                <div class="col-lg-6">
+                    <ul class="tasks">
+                        <li *ngFor="let todoTask of tasks" (click)="onSelect(todoTask)">
+                            <span class="badge">{{todoTask.name}}</span>
+                            <div *ngIf="todoTask === selectedTask">
+                                <task-detail [todoTask]="selectedTask"></task-detail>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </li>
-</ul>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+
+
