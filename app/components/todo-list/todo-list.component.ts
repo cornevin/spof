@@ -17,6 +17,18 @@ export class TodoListComponent {
 
     tasks = TASKS;
     selectedTask: Task;
+    visible: boolean = true;
+    toggled: string;
+
+    constructor() {
+        this.toggled = 'toggled';
+        this.visible = true;
+    }
+
+    toggle(): void {
+        this.visible = !this.visible;
+        this.toggled = this.visible ? 'toggled' : '';
+    }
 
     addTask(TaskName: string): void {
         var task: Task = {
