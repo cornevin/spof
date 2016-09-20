@@ -13,6 +13,8 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+    </script>
+
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
 
@@ -22,12 +24,13 @@
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
-</head>
+
+    </head>
 
 <!-- 3. Display the application -->
 <body>
 
-    <div class="container">
+    <div>
         <my-app>Loading...</my-app>
     </div>
 

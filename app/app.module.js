@@ -12,11 +12,14 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_routing_1 = require('./app.routing');
-//import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+var http_1 = require('@angular/http');
+var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
 var app_component_1 = require('./app.component');
 var login_component_1 = require('./components/login/login.component');
 var todo_list_component_1 = require('./components/todo-list/todo-list.component');
 var task_detail_component_1 = require('./components/todo-list/task-detail/task-detail.component');
+var mail_list_component_1 = require('./components/mail-list/mail-list.component');
+var mail_service_1 = require('./components/mail-list/mail.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,13 +28,19 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                app_routing_1.routing
+                http_1.HttpModule,
+                app_routing_1.routing,
+                ng2_bootstrap_1.Ng2BootstrapModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 login_component_1.LoginComponent,
                 todo_list_component_1.TodoListComponent,
-                task_detail_component_1.TaskDetailComponent
+                task_detail_component_1.TaskDetailComponent,
+                mail_list_component_1.MailListComponent
+            ],
+            providers: [
+                mail_service_1.MailService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
