@@ -8,7 +8,7 @@
         'moment': 'node_modules/moment/moment.js',
         'app': 'app', // 'dist',
         '@angular': 'node_modules/@angular',
-        'rxjs': 'node_modules/rxjs'
+        'rxjs': 'node_modules/rxjs',
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {

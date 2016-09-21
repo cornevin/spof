@@ -20,34 +20,13 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-3 col-md-offset-3 col-md-3 col-lg-offset-3 col-lg-3">
-                            <button type="submit" routerLink="/todoList" class="btn btn-success">Sign in</button>
+                            <button type="submit" (click)="test()" class="btn btn-success">Sign in</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <script>
-        //    const ego = require('./utils/utils');
-        //    const auth = ego();
-
-        var button = document.createElement('button');
-        button.textContent = ' LOOOOL';
-        /*  button.addEventListener('click', function() {
-         auth.getAccessToken(
-         "https://www.google.com/m8/feeds",
-         "418075898361-94el432gkcdfrf99qpgig1hfoqj2riuo.apps.googleusercontent.com",
-         "7j8RLmnuMildnbxlrbM-ON_P"
-         )
-         .then(token => {
-         process.stdout.write(JSON.stringify(token, null, 2));
-         })
-         .catch(err => {
-         process.stderr.write(err.message + '\n');
-         });
-         }); */
-    </script>
 
 </div>
 
