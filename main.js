@@ -59,15 +59,17 @@ app.on('activate', function () {
 
 ipcMain.on('test', (event, arg) => {
   console.log("test");
-auth.getAccessToken(
+  auth.getAccessToken(
     ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly'],
     '418075898361-94el432gkcdfrf99qpgig1hfoqj2riuo.apps.googleusercontent.com',
     '7j8RLmnuMildnbxlrbM-ON_P',
-    undefined).then(token => {
-  console.log("------------------------------------------------------------")
-console.log(token)}).catch(err => {
-  process.stderr.write(err.message + '\n');
-});
+    undefined).then(token =>
+      {
+        console.log(token);
+        event.sender.send('asynchronous-reply', token);
+      }).catch(err => {
+        process.stderr.write(err.message + '\n');
+      });
 
   console.log("end");
 //  event.sender.send('asynchronous-reply', 'pong')
