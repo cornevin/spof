@@ -7,15 +7,12 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { remote, ipcRenderer } from 'electron';
 import { Router } from '@angular/router';
 
-//declare var utils: any;
-
-//import './utils/utils.js';
-
 
 @Component({
     selector: 'login',
     templateUrl: './app/components/login/login.component.html',
 })
+
 export class LoginComponent {
     constructor(private router: Router) { }
 
