@@ -1,7 +1,7 @@
-<div class="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li *ngFor="let mail of mails">
-            <a href="#">{{mail.title}}</a>
-        </li>
-    </ul>
-</div>
+<ul class="sidebar-nav">
+    <li class="sidebar-brand" *ngFor="let mail of mails">
+        <a href="#">{{mail.subject}}</a>
+        <a href="#">{{mail.from}}</a>
+        <a href="#">{{mail.snippet}}</a>
+    </li>
+</ul>

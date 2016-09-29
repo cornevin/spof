@@ -1,13 +1,14 @@
 /**
  * Created by Quentin on 9/19/2016.
  */
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnInit } from '@angular/core';
+import { Component }            from '@angular/core';
+import { Router }               from '@angular/router';
+import { OnInit }               from '@angular/core';
 
 
-import { Mail } from '../../models/mail';
-import { MailService } from './mail.service';
+import { Mail }                 from '../../models/mail';
+import { MailService }          from './mail.service';
+import { GmailService }         from '../../services/gmail.service';
 
 @Component({
     selector: 'mail-list',
@@ -16,7 +17,14 @@ import { MailService } from './mail.service';
 })
 
 export class MailListComponent implements OnInit {
-    mails: Mail[];
+    mails: Mail[] = [
+            {
+                subject: "test",
+                from: "test",
+                snippet: "test",
+            }];
+    errorMessage: string;
+
 
     ngOnInit(): void {
         this.getMails();
@@ -24,10 +32,14 @@ export class MailListComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private mailService: MailService) {
+        private mailService: MailService,
+        private gmailService: GmailService) {
     }
 
     getMails(): void {
-        this.mailService.getMails().then(mails => this.mails = mails);
+        this.gmailService.getMailList()
+                 .subscribe(
+                   mails => this.mails = mails,
+                   error =>  this.errorMessage = <any>error);
     }
 }

@@ -4,8 +4,5 @@
 import { Mail } from '../../models/mail';
 
 export const MAILS: Mail[] = [
-    {title: "mail1"},
-    {title: "mail2"},
-    {title: "mail3"},
-    {title: "mail4"}
+
 ];

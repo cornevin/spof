@@ -2,11 +2,12 @@
  * Created by dan_mac on 17/09/2016.
  */
 
-import { Component } from '@angular/core';
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { remote, ipcRenderer } from 'electron';
-import { Router } from '@angular/router';
+import { Component }                from '@angular/core';
+import { Ng2BootstrapModule }       from 'ng2-bootstrap/ng2-bootstrap';
+import { ipcRenderer }              from 'electron';
+import { Router }                   from '@angular/router';
 
+import { GmailService }             from '../../services/gmail.service';
 
 @Component({
     selector: 'login',
@@ -14,16 +15,19 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent {
-    constructor(private router: Router) { }
+    constructor(
+        private router: Router,
+        private gmailService: GmailService) {
+
+    }
 
     test(): void {
         ipcRenderer.send("test");
         ipcRenderer.on('asynchronous-reply', (event, arg) => {
             var token = arg;
-            console.log(arg);
-
             if(token.access_token && token.token_type) {
-                this.router.navigate(['/todoList'])
+                this.gmailService.updateToken(token);
+                this.router.navigate(['/core'])
             } else {
                 console.log(" error with the token, response : " , token);
             }

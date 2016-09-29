@@ -4,7 +4,7 @@
 import { ModuleWithProviders }      from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
 
-import { TodoListComponent }        from './components/todo-list/todo-list.component';
+import { CoreComponent }            from './components/core/core.component';
 import { LoginComponent }           from './components/login/login.component';
 
 
@@ -19,8 +19,8 @@ const appRoutes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'todoList',
-        component: TodoListComponent
+        path: 'core',
+        component: CoreComponent
     }
 ];
 
