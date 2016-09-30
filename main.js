@@ -60,7 +60,7 @@ app.on('activate', function () {
 ipcMain.on('test', (event, arg) => {
   console.log("test");
   auth.getAccessToken(
-    ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly'],
+    ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly', 'https://www.googleapis.com/auth/calendar'],
     '418075898361-94el432gkcdfrf99qpgig1hfoqj2riuo.apps.googleusercontent.com',
     '7j8RLmnuMildnbxlrbM-ON_P',
     undefined).then(token =>

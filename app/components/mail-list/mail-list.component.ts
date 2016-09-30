@@ -5,7 +5,7 @@ import { Component }            from '@angular/core';
 import { Router }               from '@angular/router';
 import { OnInit }               from '@angular/core';
 
-
+import { MailId }               from '../../models/mailId';
 import { Mail }                 from '../../models/mail';
 import { MailService }          from './mail.service';
 import { GmailService }         from '../../services/gmail.service';
@@ -17,12 +17,7 @@ import { GmailService }         from '../../services/gmail.service';
 })
 
 export class MailListComponent implements OnInit {
-    mails: Mail[] = [
-            {
-                subject: "test",
-                from: "test",
-                snippet: "test",
-            }];
+    mails: any[] = [];
     errorMessage: string;
 
 
@@ -39,7 +34,17 @@ export class MailListComponent implements OnInit {
     getMails(): void {
         this.gmailService.getMailList()
                  .subscribe(
-                   mails => this.mails = mails,
+                   mails => this.getMailsById(mails),
                    error =>  this.errorMessage = <any>error);
+    }
+
+    private getMailsById(idList: MailId[]) {
+        for (let i = 0; i < 10; i++) {
+            this.gmailService.getMail(idList[i].id)
+                    .subscribe(
+                        mail => this.mails.push(mail),
+                        error => this.errorMessage = <any>error
+                    );
+        }
     }
 }
