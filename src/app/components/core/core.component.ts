@@ -6,7 +6,7 @@ import { Component }                from '@angular/core';
 
 @Component({
     selector: 'login',
-    templateUrl: './app/components/core/core.component.html',
+    templateUrl: './core.component.html',
 })
 
 export class CoreComponent {

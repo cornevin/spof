@@ -12,8 +12,8 @@ import { GmailService }         from '../../services/gmail.service';
 
 @Component({
     selector: 'mail-list',
-    templateUrl: './app/components/mail-list/mail-list.component.html',
-    styleUrls: ['./app/components/mail-list/mail-list.component.css'],
+    templateUrl: './mail-list.component.html',
+    styleUrls: ['./mail-list.component.css'],
 })
 
 export class MailListComponent implements OnInit {

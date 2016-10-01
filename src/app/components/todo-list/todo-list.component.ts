@@ -9,8 +9,8 @@ const TASKS: Task[] = [
 
 @Component({
     selector: 'todo-list',
-    templateUrl: './app/components/todo-list/todo-list.component.html',
-    styleUrls: ['./app/components/todo-list/todo-list.component.css'],
+    templateUrl: './todo-list.component.html',
+    styleUrls: ['./todo-list.component.css'],
 })
 
 export class TodoListComponent {

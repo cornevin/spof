@@ -9,8 +9,8 @@ import { Task } from '../../../models/task';
 
 @Component({
     selector: 'task-detail',
-    templateUrl: './app/components/todo-list/task-detail/task-detail.component.html',
-    styleUrls: ['./app/components/todo-list/task-detail/task-detail.component.css'],
+    templateUrl: './task-detail.component.html',
+    styleUrls: ['./task-detail.component.css'],
 })
 
 export class TaskDetailComponent {
