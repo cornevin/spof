@@ -8,9 +8,12 @@ import {Observable}                                             from 'rxjs/Rx';
 import { MailId }                                               from '../models/mailId';
 import { Mail }                                                 from '../models/mail';
 
+import { MailService }                                          from '../services/mail.service';
+
 @Injectable()
 export class GmailService {
-    constructor(private http: Http) { }
+    constructor(private http: Http,
+                private mailService: MailService) { }
 
     token: any;
 
@@ -26,7 +29,11 @@ export class GmailService {
         let headers = new Headers({ 'Authorization' : this.token.token_type + ' ' + this.token.access_token });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.get('https://www.googleapis.com/gmail/v1/users/qcornevin@gmail.com/messages', options)
+        var mail: string = this.mailService.getUserMail();
+
+        var request = 'https://www.googleapis.com/gmail/v1/users/' + mail + '/messages';
+
+        return this.http.get(request, options)
                       .map(this.extractIdList)
                       .catch(this.handleError);
     }
@@ -41,11 +48,10 @@ export class GmailService {
         let headers = new Headers({ 'Authorization' : this.token.token_type + ' ' + this.token.access_token });
         let options = new RequestOptions({ headers: headers });
 
+        var mail: string = this.mailService.getUserMail();
 
-        var messageId: string;
-        messageId = mailId;
-        var request: string;
-        request = "https://www.googleapis.com/gmail/v1/users/qcornevin@gmail.com/messages/" + messageId;
+        var messageId: string = mailId;
+        var request: string = "https://www.googleapis.com/gmail/v1/users/" +  mail + "/messages/" + messageId;
 
         return this.http.get(request, options)
                       .map(this.extractData)

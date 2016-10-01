@@ -7,7 +7,6 @@ import { OnInit }               from '@angular/core';
 
 import { MailId }               from '../../models/mailId';
 import { Mail }                 from '../../models/mail';
-import { MailService }          from './mail.service';
 import { GmailService }         from '../../services/gmail.service';
 
 @Component({
@@ -27,7 +26,6 @@ export class MailListComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private mailService: MailService,
         private gmailService: GmailService) {
     }
 

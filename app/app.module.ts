@@ -14,7 +14,7 @@ import { TaskDetailComponent }          from './components/todo-list/task-detail
 import { MailListComponent }            from './components/mail-list/mail-list.component';
 import { CoreComponent }                from './components/core/core.component';
 
-import { MailService }                  from './components/mail-list/mail.service';
+import { MailService }                  from './services/mail.service';
 import { GmailService }                 from './services/gmail.service';
 
 @NgModule({

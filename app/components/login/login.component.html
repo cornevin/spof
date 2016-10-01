@@ -4,11 +4,11 @@
     <div class="offset-md-4 col-md-4">
         <div class="form-login">
             <h4>Welcome back.</h4>
-            <input type="text" id="email" class="form-control input-sm chat-input" placeholder="mail address" />
+            <input type="text" id="email" [(ngModel)]="mail" class="form-control input-sm chat-input" placeholder="mail address" />
             <br>
             <div class="wrapper">
                 <span class="group-btn">
-                    <a (click)="test()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                    <a (click)="log(mail)" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
                 </span>
             </div>
         </div>

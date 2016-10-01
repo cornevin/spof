@@ -7,6 +7,7 @@ import { ipcRenderer }              from 'electron';
 import { Router }                   from '@angular/router';
 
 import { GmailService }             from '../../services/gmail.service';
+import { MailService }              from '../../services/mail.service';
 
 @Component({
     selector: 'login',
@@ -17,17 +18,19 @@ import { GmailService }             from '../../services/gmail.service';
 export class LoginComponent {
     constructor(
         private router: Router,
-        private gmailService: GmailService) {
+        private gmailService: GmailService,
+        private mailService : MailService) {
 
     }
 
-    test(): void {
-        ipcRenderer.send("test");
+    log(mail): void {
+        ipcRenderer.send("log");
         ipcRenderer.on('asynchronous-reply', (event, arg) => {
             var token = arg;
             if(token.access_token && token.token_type) {
                 this.gmailService.updateToken(token);
-                this.router.navigate(['/core'])
+                this.mailService.setUserMail(mail);
+                this.router.navigate(['/core']);
             } else {
                 console.log(" error with the token, response : " , token);
             }

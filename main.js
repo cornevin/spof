@@ -57,8 +57,7 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 
-ipcMain.on('test', (event, arg) => {
-  console.log("test");
+ipcMain.on('log', (event, arg) => {
   auth.getAccessToken(
     ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly', 'https://www.googleapis.com/auth/calendar'],
     '418075898361-94el432gkcdfrf99qpgig1hfoqj2riuo.apps.googleusercontent.com',
@@ -71,6 +70,5 @@ ipcMain.on('test', (event, arg) => {
         process.stderr.write(err.message + '\n');
       });
 
-  console.log("end");
 //  event.sender.send('asynchronous-reply', 'pong')
 })
