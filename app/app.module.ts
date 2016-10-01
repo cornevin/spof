@@ -13,6 +13,7 @@ import { TodoListComponent }            from './components/todo-list/todo-list.c
 import { TaskDetailComponent }          from './components/todo-list/task-detail/task-detail.component';
 import { MailListComponent }            from './components/mail-list/mail-list.component';
 import { CoreComponent }                from './components/core/core.component';
+import {CoreMenuComponent} from "./components/core/menu/core-menu.component";
 
 import { MailService }                  from './components/mail-list/mail.service';
 import { GmailService }                 from './services/gmail.service';
@@ -31,7 +32,8 @@ import { GmailService }                 from './services/gmail.service';
         TodoListComponent,
         TaskDetailComponent,
         MailListComponent,
-        CoreComponent
+        CoreComponent,
+        CoreMenuComponent
     ],
     providers: [
         MailService,
