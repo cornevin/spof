@@ -4,7 +4,7 @@ import { FormsModule }                  from '@angular/forms';
 import { routing }                      from './app.routing';
 import { HttpModule }                   from '@angular/http';
 
-import { Ng2BootstrapModule }           from 'ng2-bootstrap/ng2-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent }                 from './app.component';
 
@@ -23,7 +23,7 @@ import { GmailService }                 from './services/gmail.service';
         FormsModule,
         HttpModule,
         routing,
-        Ng2BootstrapModule
+        NgbModule
     ],
     declarations: [
         AppComponent,
