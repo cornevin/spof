@@ -1,0 +1,9 @@
+.todolist .new-todo {
+    border: none !important
+}
+
+
+.todolist .task {
+    border-style: solid;
+    border-width: 1px;
+}
