@@ -38,10 +38,9 @@ export class GmailService {
                       .catch(this.handleError);
     }
 
-
-    private extractData(res: Response): Mail {
+    private extractIdList(res: Response) : MailId[] {
         let body = res.json();
-        return body || { };
+        return body.messages || { };
     }
 
     getMail(mailId: any): Observable<Mail> {
@@ -58,10 +57,31 @@ export class GmailService {
                       .catch(this.handleError);
     }
 
-    private extractIdList(res: Response) : MailId[] {
+    private extractData(res: Response): Mail {
         let body = res.json();
-        return body.messages || { };
+        var mail: Mail;
+        var subject: string;
+        var from: string;
+        var snippet: string = body.snippet;
+
+        for(var i in body.payload.headers) {
+            if(body.payload.headers[i].name === 'Subject') {
+                subject = body.payload.headers[i].value;
+            }
+            if(body.payload.headers[i].name === 'From') {
+                from = body.payload.headers[i].value;
+            }
+        }
+        mail = {
+            subject,
+            from,
+            snippet
+        }
+
+        return mail;
     }
+
+
 
     private handleError (error: any) {
           let errMsg = (error.message) ? error.message :
