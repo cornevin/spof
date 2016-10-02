@@ -1,0 +1,21 @@
+.mailList .title {
+    color: #2BBCDE;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    margin: 0;
+}
+
+.mailList .media-meta {
+    font-size: 11px;
+    color: #999;
+}
+
+.mailList .summary {
+    font-size: 14px;
+}
+
+
+.mailList .table {
+    border-right: 1px #ccc solid;
+}

@@ -1,7 +1,17 @@
-<ul class="sidebar-nav">
-    <li class="sidebar-brand" *ngFor="let mail of mails">
-        <div>{{mail.subject}}</div>
-        <div>{{mail.from}}</div>
-        <div>{{mail.snippet}}</div>
-    </li>
-</ul>
+<div class="mailList">
+    <div class="panel panel-default">
+        <div class="table-container">
+            <table class="table table-filter">
+                <tbody>
+                    <tr *ngFor="let mail of mails">
+                        <td>
+                            <h4 class="title"> {{mail.subject}} </h4>
+                            <span class="media-meta">{{mail.from}}</span>
+                            <p class="summary"> {{mail.snippet}} </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,19 @@
 .todolist .new-todo {
-    border: none !important
+    border: none !important;
+    width: 100%;
+    height:70px;
 }
 
+.todolist .new-todo[placeholder] {
+    line-height: 70px;
+    font-size: 22px;
+    outline: none;
+}
+
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
 
 .todolist .task {
     border-style: solid;
