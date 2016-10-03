@@ -1,14 +1,17 @@
 /* Master Styles */
 h1 {
-  color: #369;
+  color: #5963AB;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
 h2, h3 {
-  color: #444;
+  color: #5963AB;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
 body {
   margin: 2em;
+  background: url("./assets/bg-pattern.png"), -webkit-linear-gradient(to left, #76A5D2, #CF7EAF);
+  background: url("./assets/bg-pattern.png"), linear-gradient(to left, #76A5D2, #CF7EAF);
+
 }

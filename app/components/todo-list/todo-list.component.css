@@ -27,3 +27,7 @@
 .todolist .todo {
     color: #5cb85c;
 }
+
+.todolist .container-fluid {
+    background-color: white;
+}
