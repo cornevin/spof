@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="offset-md-3 col-md-6">
-                <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="task"
-                       (keyup.enter)="addTask(task)">
+                <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="taskName"
+                       (keyup.enter)="addTask()">
             </div>
         </div>
         <div class="row">
@@ -14,9 +14,9 @@
                             <td>
                                 <div class="taskDescription" (click)="onSelect(todoTask)">
                                     <h4 class="title"> {{todoTask.name}} </h4>
-                                    <div *ngIf="selectedTasks.indexOf(todoTask) !== -1">
-                                        <task-detail [todoTask]="todoTask"></task-detail>
-                                    </div>
+                                </div>
+                                <div *ngIf="selectedTasks.indexOf(todoTask) !== -1">
+                                    <task-detail [todoTask]="todoTask"></task-detail>
                                 </div>
                             </td>
                             <td>
