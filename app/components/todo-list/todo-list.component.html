@@ -14,10 +14,8 @@
                             <td>
                                 <div class="taskDescription" (click)="onSelect(todoTask)">
                                     <h4 class="title"> {{todoTask.name}} </h4>
-
-
-                                    <div *ngIf="todoTask === selectedTask">
-                                        <task-detail [todoTask]="selectedTask"></task-detail>
+                                    <div *ngIf="selectedTasks.indexOf(todoTask) !== -1">
+                                        <task-detail [todoTask]="todoTask"></task-detail>
                                     </div>
                                 </div>
                             </td>
@@ -25,7 +23,6 @@
                                 <div class="todo">
                                     To be done
                                 </div>
-                            <!--    <span class="status"> To be done </span>-->
                             </td>
                             <td>
                                 <span class="date"> Today </span>

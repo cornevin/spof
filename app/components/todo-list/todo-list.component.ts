@@ -16,7 +16,7 @@ const TASKS: Task[] = [
 export class TodoListComponent {
 
     tasks = TASKS;
-    selectedTask: Task;
+    selectedTasks: Task[] = [];
     visible: boolean = true;
     toggled: string;
 
@@ -39,6 +39,10 @@ export class TodoListComponent {
     };
 
     onSelect(task: Task): void {
-        this.selectedTask = task;
+        if(this.selectedTasks.indexOf(task) !== -1) {
+            this.selectedTasks.splice(this.selectedTasks.indexOf(task),1);
+        } else {
+            this.selectedTasks.push(task);
+        }
     };
 }
