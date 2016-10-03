@@ -28,5 +28,6 @@
 
 
 .mailList .table {
-    background-color: white;
+    background-color: #EDEDED;
+    border-radius: 15px;
 }

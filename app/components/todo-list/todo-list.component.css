@@ -2,6 +2,7 @@
     border: none !important;
     width: 100%;
     height:70px;
+    background-color: #EDEDED;
 }
 
 .todolist .new-todo[placeholder] {
@@ -29,5 +30,6 @@
 }
 
 .todolist .container-fluid {
-    background-color: white;
+    background-color: #EDEDED;
+    border-radius: 15px;
 }

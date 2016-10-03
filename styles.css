@@ -15,3 +15,8 @@ body {
   background: url("./assets/bg-pattern.png"), linear-gradient(to left, #76A5D2, #CF7EAF);
 
 }
+
+
+.loading {
+    background: url("./assets/loading.gif");
+}
