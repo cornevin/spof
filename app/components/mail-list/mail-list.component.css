@@ -19,3 +19,9 @@
 .mailList .table {
     border-right: 1px #ccc solid;
 }
+
+
+.mailList tr:hover {
+    cursor: pointer;
+    background-color: #eee;
+}

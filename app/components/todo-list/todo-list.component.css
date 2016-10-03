@@ -15,7 +15,15 @@
    text-align: center;
 }
 
-.todolist .task {
-    border-style: solid;
-    border-width: 1px;
+.todolist .date {
+    text-align: right!important;
+}
+
+
+.todolist .status {
+    text-align: right!important;
+}
+
+.todolist .todo {
+    color: #5cb85c;
 }
