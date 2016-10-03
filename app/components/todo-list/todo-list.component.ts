@@ -19,10 +19,12 @@ export class TodoListComponent {
     selectedTasks: Task[] = [];
     visible: boolean = true;
     toggled: string;
+    taskName: string;
 
     constructor() {
         this.toggled = 'toggled';
         this.visible = true;
+        this.taskName = '';
     }
 
     toggle(): void {
@@ -30,12 +32,13 @@ export class TodoListComponent {
         this.toggled = this.visible ? 'toggled' : '';
     }
 
-    addTask(TaskName: string): void {
+    addTask(): void {
         var task: Task = {
-            name: TaskName,
+            name: this.taskName,
             description: "Write your description here"
         };
         TASKS.push(task);
+        this.taskName = "";
     };
 
     onSelect(task: Task): void {
