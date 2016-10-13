@@ -15,8 +15,10 @@
 
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
-
+    <link href="styles.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
 
     <script>
         System.set('electron', System.newModule(require('electron')));
@@ -28,7 +30,7 @@
 <!-- 3. Display the application -->
 <body>
     <div>
-        <my-app>Loading...</my-app>
+        <my-app><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></my-app>
     </div>
 </body>
 

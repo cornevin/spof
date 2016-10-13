@@ -2,11 +2,12 @@
  * Created by dan_mac on 17/09/2016.
  */
 
-import { Component }                from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'login',
+    selector: 'core',
     templateUrl: './app/components/core/core.component.html',
+    styleUrls: ['./app/components/core/core.component.css'],
 })
 
 export class CoreComponent {

@@ -6,6 +6,7 @@ const BrowserWindow = electron.BrowserWindow;
 const {ipcMain} = require('electron');
 const ego = require('./oauth');
 const auth = ego();
+const window = electron.BrowserWindowProxy;
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -59,16 +60,22 @@ app.on('activate', function () {
 
 ipcMain.on('log', (event, arg) => {
   auth.getAccessToken(
-    ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly', 'https://www.googleapis.com/auth/calendar'],
+    ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly',
+     'https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/plus.login'],
     '418075898361-94el432gkcdfrf99qpgig1hfoqj2riuo.apps.googleusercontent.com',
     '7j8RLmnuMildnbxlrbM-ON_P',
     undefined).then(token =>
       {
-        console.log(token);
         event.sender.send('asynchronous-reply', token);
       }).catch(err => {
         process.stderr.write(err.message + '\n');
       });
+})
 
-//  event.sender.send('asynchronous-reply', 'pong')
+
+ipcMain.on('share', (event, arg) => {
+  if(arg.name) {
+    let win = new BrowserWindow({width: 800, height: 800})
+    win.loadURL('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=' + arg.name + '&body=BODY&tf=1')
+  }
 })

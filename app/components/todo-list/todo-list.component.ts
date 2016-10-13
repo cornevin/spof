@@ -1,8 +1,8 @@
 /**
  * Created by dan_mac on 17/09/2016.
  */
-import { Component } from '@angular/core';
-import { Task } from '../../models/task';
+import { Component }    from '@angular/core';
+import { Task }         from '../../models/task';
 
 const TASKS: Task[] = [
 ];

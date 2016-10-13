@@ -29,5 +29,10 @@
 
 .mailList .table {
     background-color: #EDEDED;
-    border-radius: 15px;
+}
+
+.mailList .table {
+    max-width: none;
+    table-layout: fixed;
+    word-wrap: break-word;
 }

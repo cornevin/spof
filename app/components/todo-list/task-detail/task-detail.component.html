@@ -1,4 +1,8 @@
-
-<div contenteditable="true"
-     [textContent]="todoTask.description" (input)="todoTask.description=$event.target.textContent"></div>
-<p>
+<div class="task-detail">
+    <div contenteditable="true"
+        [textContent]="todoTask.description" (input)="todoTask.description=$event.target.textContent">
+    </div>
+    <span class="group-btn">
+        <a (click)="sendMail()" class="btn btn-primary btn-md"> Share <i class="fa fa-sign-in"></i></a>
+    </span>
+</div>

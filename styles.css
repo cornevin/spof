@@ -11,9 +11,8 @@ h2, h3 {
 }
 body {
   margin: 2em;
-  background: url("./assets/bg-pattern.png"), -webkit-linear-gradient(to left, #76A5D2, #CF7EAF);
-  background: url("./assets/bg-pattern.png"), linear-gradient(to left, #76A5D2, #CF7EAF);
-
+  background: url("./assets/bg-pattern.png"), -webkit-linear-gradient(to left, #76A5D2, #7f7ecf);
+  background: url("./assets/bg-pattern.png"), linear-gradient(to left, #76A5D2, #7f7ecf);
 }
 
 

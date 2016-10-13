@@ -7,6 +7,7 @@ import {Observable}                                             from 'rxjs/Rx';
 
 import { MailId }                                               from '../models/mailId';
 import { Mail }                                                 from '../models/mail';
+import { User }                                                 from '../models/user'
 
 import { MailService }                                          from '../services/mail.service';
 
@@ -25,6 +26,29 @@ export class GmailService {
         return this.token;
     }
 
+    getUserInformation(): Observable<User> {
+        let headers = new Headers({ 'Authorization' : this.token.token_type + ' ' + this.token.access_token });
+        let options = new RequestOptions({ headers: headers });
+
+        var mail: string = this.mailService.getUserMail();
+
+        var request = 'https://www.googleapis.com/plus/v1/people/me';
+
+        return this.http.get(request, options)
+                      .map(this.extractUserInformation)
+                      .catch(this.handleError);
+    }
+
+    private extractUserInformation(res: Response) : User {
+        let body = res.json();
+        var user = {
+            "name": body.displayName,
+            "imageUrl": body.image.url
+        }
+        console.log("Should work : " ,user);
+        return user;
+    }
+
     getMailList (): Observable<MailId[]> {
         let headers = new Headers({ 'Authorization' : this.token.token_type + ' ' + this.token.access_token });
         let options = new RequestOptions({ headers: headers });
@@ -40,6 +64,7 @@ export class GmailService {
 
     private extractIdList(res: Response) : MailId[] {
         let body = res.json();
+        console.log(body)
         return body.messages || { };
     }
 
@@ -80,8 +105,6 @@ export class GmailService {
 
         return mail;
     }
-
-
 
     private handleError (error: any) {
           let errMsg = (error.message) ? error.message :

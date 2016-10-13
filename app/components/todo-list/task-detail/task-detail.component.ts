@@ -4,7 +4,8 @@
 
 
 import { Component, Input } from '@angular/core';
-import { Task } from '../../../models/task';
+import { Task }             from '../../../models/task';
+import { ipcRenderer }      from 'electron';
 
 
 @Component({
@@ -17,5 +18,7 @@ export class TaskDetailComponent {
     @Input()
     todoTask: Task;
 
-
+    sendMail(): void {
+        ipcRenderer.send("share", this.todoTask);
+    }
 }
